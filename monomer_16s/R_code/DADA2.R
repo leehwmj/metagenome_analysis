@@ -152,4 +152,8 @@ plot_bar(ps, x="Time_and_Sample", fill="Phylum")+
 top10 <- names(sort(taxa_sums(ps), decreasing=TRUE))[1:10]
 ent10 <- prune_taxa(top20, ps)
 plot_bar(ent10, "Time_and_Sample", fill="Phylum")+
-  geom_bar(aes(color=Phylum, fill=Phylum), stat="identity", position="stack")
+  geom_bar(aes(color=Phylum, fill=Phylum), stat="identity", position="stack")+
+  scale_x_discrete(limits=c("1st_Blank", "2nd_Blank", "3rd_Blank",
+                            "1st_Blank", "2nd_4A", "3rd_4A",
+                            "1st_Blank", "2nd_5A", "3rd_5A",
+                            "1st_Blank", "2nd_6A", "3rd_6A"))
